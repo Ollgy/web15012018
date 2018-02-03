@@ -1,0 +1,44 @@
+.slider {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .slider_arrow {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
+  .slider_list {
+    -webkit-box-flex: 8;
+    -ms-flex: 8;
+    flex: 8; }
+  .slider_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; }
+
+.slider__image {
+  background-image: url("/img/slider/black_burger.png");
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.slider__text {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }

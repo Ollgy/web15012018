@@ -1,0 +1,147 @@
+
+.dropdown{
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);   
+    /* border: 1px solid black; */
+    border-radius:5px;
+    width: 150px;
+    height: 75px;
+    background-color: white;
+    position:absolute;
+    top:100%;
+    left:9999px;         
+    margin-top:10px;   
+    transform:translate(-50%);
+    z-index:10;
+    
+
+}
+
+.triangle{
+    border-top: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid white;
+
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    left:100%;
+    transform: translate(-100%);
+    position: absolute;
+}
+
+
+.dropdown:before{
+    content:"";
+    display:block;
+    height: 40px;
+    left:0;
+    right:0;
+    top:-35px;
+    position:absolute;
+}
+
+.contacts__time, .contacts__dinnertime{
+    font-size: 14px;
+    margin-left: 10px;
+    position:absolute;
+    font-stretch: narrower;
+    left: 8px;
+}
+
+.contacts__time {
+    font-weight: bold;
+    color:#1c5bc3;
+    top:15px;
+}
+
+.contacts__dinnertime{    
+    color: #312e2e;
+    margin-top:10px;
+    font-weight: lighter;
+    top:35px;
+}
+
+
+
+.header {
+    
+    background: #4b73b5;
+    position: relative;
+}
+
+.header__left, .header__right {
+    float:left;
+    width: 50%;
+    
+}
+
+.header__right{
+    text-align: right;
+   
+}
+
+.logo__header{
+    width: 120px;
+    height: 35px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.contacts{
+    display: block;
+    float: right;
+    font-weight: bold;
+    text-align: right;
+    text-decoration:none;
+    margin-top: 17px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+}
+
+.contacts__phonelink{
+    
+    font-size: 21px;
+    color:white;
+    text-decoration: none; 
+    
+   
+}
+
+.contacts__timetable:hover>.contacts__timetablelink{
+    color:white;
+}
+
+
+.contacts__timetablelink{
+
+    font-size: 14px;
+    color:#c9d5e9;
+    padding-bottom:7px;
+}
+
+.contacts__phone, .contacts__timetable{
+    
+    
+    display:block;
+}
+
+
+.contacts__timetablelink:hover + .dropdown{  
+    
+    right:0;
+    left:985px;
+    top: 80px;
+    transition: top 1s;
+}
+
+.dropdown:hover {
+    right:0;
+    left:985px;
+    top: 80px;
+    transition: top 1s;   
+} 
+
+.contacts__timetablelink:hover{
+    color:white;
+}

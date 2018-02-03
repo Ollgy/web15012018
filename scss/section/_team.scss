@@ -1,0 +1,163 @@
+.accordeon{
+    display:inline-block;
+    // width: rem(350px);
+    max-height:80%; 
+}
+
+.accordeon__list{
+   
+    margin:0;
+    padding:0;
+}
+
+.accordeon__item{
+
+    width: 100%;
+    margin-top:rem(18px);
+    position:relative;
+
+    &:first__child{
+        margin-top: 0;
+    }
+
+    &--active{
+
+        .title--team{
+        color:#f9b43b;
+    }
+
+    .triangle{
+        border-bottom:rem(5px) solid #f9b43b;
+        border-top:rem(5px) solid transparent;
+        transform: translate(0,-25%)
+    }
+
+}
+
+    &--active>.accordeon__content{
+        height:100%;
+    }
+
+}
+
+.triangle{
+    display:inline-block;
+    position: relative;
+    border-top: rem(5px) solid #f9b43b;
+    border-right: rem(5px) solid transparent;
+    border-left: rem(5px) solid transparent;
+    border-bottom: rem(5px) solid transparent;
+
+    width: 0;
+    height: 0;
+    margin-right:rem(5px);
+    transform: translate(0,25%);
+    
+}
+
+// .triangle--bottom{
+//     border-top: 
+// }
+
+// .triangle--top{
+//     border-bottom: 
+// }
+
+.accordeon__content{
+    
+    box-sizing: border-box;
+    padding-top:rem(10px);
+    height:0;
+    overflow:hidden;
+    display: flex;
+    flex-direction: row;
+
+    @include tablets{
+        flex-direction: column;
+        align-items: center;
+     }
+      
+      @include phones{
+        flex-direction: column;
+        align-items: center;
+        }
+
+    
+}
+
+.accordeon__foto{
+    background-image: url('/img/team/photo2.jpg');
+    width: rem(105px);
+    height: rem(105px);
+    border-radius: 50%;
+    overflow: hidden; 
+    background-size: cover;
+    background-position: rem(-20px); 
+    display: inline-block;
+    margin-right: rem(15px);
+    margin-left: rem(15px);
+   
+}
+
+.accordeon__avatar{
+    width: rem(100px);
+    height: rem(100px);
+    border-radius: 50%;
+    overflow: hidden; 
+    background-size: cover;
+    background-position: center; 
+    display: inline-block;
+    margin-right: rem(20px);
+    margin-left: rem(20px);
+}
+
+.accordeon__avatar--hidden{
+    visibility: hidden;
+}
+
+.accordeon__info{
+    display: inline-block;
+    width: rem(230px);
+    font-family: 'Ubunty', 'Arial';
+    font-size: rem(14px);
+    text-align: left;
+    color:white;
+    line-height: 2em;
+
+    @include tablets{
+        text-align: center;
+     }
+      
+      @include phones{
+        text-align: center;
+        }
+}
+
+.info__function{
+    font-weight:bold;
+    display: inline-block;
+}
+
+.info__text{
+    display:inline-block;
+    padding-bottom: rem(15px);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

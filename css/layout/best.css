@@ -1,0 +1,61 @@
+.features{
+    text-align: middle;
+}
+
+
+.features__item{
+    display:inline-block;
+    width: 280px;
+    margin-right:36px;
+    vertical-align:top;
+    
+}
+
+.features__item:last-child{
+    margin-right:0;    
+}
+
+.features__image{
+    display:inline-block;
+    text-align: center;
+    width: 100%;
+    height:90px;
+    top:0;
+    margin-bottom:20px;
+    z-index:10;
+    background-repeat: no-repeat;
+}
+
+.features__image--meat{
+    width: 100px;  
+    margin-left:10px;  
+    background-image: url('/img/best/meat.png'); 
+   
+}
+
+.features__image--hand{
+    width: 70px;       
+    background-image: url('/img/best/hand.png'); 
+    
+}
+
+.features__image--natural{
+    width: 90px;  
+    margin-right: 0px;      
+    background-image: url('/img/best/natural.png'); 
+      
+}
+
+.title__best{
+    font-family: 'lifehackmedium','Arial';
+    font-size:24px;
+    color:white;
+}
+
+.features__text{
+    font-family: 'Ubuntu', 'Arial';
+    font-weight:300;
+    font-size: 14px;
+    color: #585a5a; 
+    line-height: 1.7em;
+}

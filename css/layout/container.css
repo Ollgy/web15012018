@@ -1,0 +1,140 @@
+html{
+    height: 100%;
+}
+
+body{
+    
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    /* font-size: */
+}
+
+ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+h1,h2,h3{
+    margin-top:0;
+}
+
+.wrapper {
+    position:relative;
+    overflow:hidden;
+    min-height:650px;
+    min-width: 100%;
+
+}
+
+
+.clearfix:after{
+
+    content: "";
+    display: block;
+    clear: both;
+
+}
+
+.container{
+    margin: 0 auto ;
+    position: relative;
+    width:1000px;
+    height:100%;
+}
+
+
+.section{
+    width: 100vw;
+    height: 100vh;
+    min-height:650px;
+    position: relative;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    text-align:center;
+    z-index:-1000;
+}
+
+.section--start{
+  background-image: url('/img/start/video-bg.jpg');
+  padding-top: 15px;
+  padding-bottom: 40px;
+}
+
+
+
+.section--best{
+  background-image: url('/img/best/bg.jpg');
+  padding-top:115px;
+}
+
+.section--review{
+  width: 100vw;
+  height: 650px;
+}
+
+
+.title{
+    
+      font-family: 'gagalinregular','Arial';
+      font-size: 72px;
+      text-transform: uppercase;
+      font-weight: normal;
+       
+    }
+    
+    .title--start{
+      color: #f9b43b;
+      margin-bottom: 15px; 
+    
+    }
+    
+    .title--best{
+      color:#2f3234;
+      margin-bottom: 40px;
+      
+    }
+    
+    .ltitle {
+      font-family: 'lifehackmedium','Arial';
+      font-size: 65px; 
+    
+      
+    }
+    
+    .ltitle--start{
+      font-size: 65px;
+      color: white;
+      text-transform:lowercase;
+      font-stretch: condensed;
+      line-height: 0.9em;
+      margin-left: 12px;
+      letter-spacing: -1.5px;
+      font-weight:300;
+      text-align:left;
+      
+    }
+    
+    .ltitle--best{
+      font-size: 24px;
+      color: #2f3234;
+      margin-bottom: 15px;
+      line-height: 1.2em;
+      letter-spacing: -0.5px;
+    }
+
+    .title--review{
+        color:white;
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+    }
+
+/* .wrapper:after{
+    content:"";
+    display:block;
+    height:75px;
+} */

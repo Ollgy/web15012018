@@ -1,0 +1,145 @@
+.accordeon-horiz{
+    float:right;
+    height:100%;
+}
+
+.accordeon-horiz__list{
+    
+     margin:0;
+     padding:0;
+     height:100%
+     
+ }
+
+ .accordeon-horiz__item{
+     height:100%;
+     float:left;
+     position:relative;
+
+     &--active>.accordeon-horiz__title{        
+                .title--lmenu{
+                color:#f9b43b;
+                filter:grayscale(0%);
+            }
+        }
+        
+            &--active>.accordeon-horiz__content{
+                width:rem(640px);
+
+                @include tablets{
+                    width:rem(440px);
+                 }
+
+                 @include phones{
+                    width: rem(300px);
+                 }
+                
+            }
+
+ }
+
+//  .accordeon__titlebox{
+//      height:100%;
+//      width: 100%;
+//      vertical-align:bottom;
+//      display:inline-block;
+//      text-align: center;
+//  }
+ 
+ .accordeon-horiz__title{
+    
+     height: 100%;
+     width: rem(80px);
+     display: flex;
+     align-items:flex-end;
+     padding-bottom:rem(40px);
+     box-sizing:border-box;     
+     background-size:cover;
+     overflow:hidden;
+    //  filter:grayscale(80%);
+     position:relative;
+     float:left;   
+     
+     @include phones{
+        width: rem(45px);
+     }
+ }
+
+.accordeon-horiz__titlebkg{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    right:0;
+    background-color: rgba(47, 50, 52, 0.8);
+   
+}
+
+.accordeon-horiz__title--meat{
+    background-image:  url('/img/menu/meat.jpg');
+}
+
+.accordeon-horiz__title--vegan{
+    background-image:  url('/img/menu/vegan.jpg');
+}
+
+.accordeon-horiz__title--diet{
+    background-image:  url('/img/menu/diet.jpg');
+}
+     
+ 
+    //  &:first__child{
+    //      margin-top: 0;
+    //  }
+ 
+    //  &--active{
+ 
+    //      .title--team{
+    //      color:#f9b43b;
+    //  }
+ 
+    //  .triangle{
+    //      border-bottom:rem(5px) solid #f9b43b;
+    //      border-top:rem(5px) solid transparent;
+    //      transform: translate(0,-25%)
+    //  }
+ 
+//  }
+ 
+//      &--active>.accordeon__content{
+//          height:100%;
+//      }
+ 
+//  }
+
+//  .accordeon-horiz__title{
+//      float:left;
+//      height:100%;
+//  }
+ 
+  
+ .accordeon-horiz__content{
+     
+     
+     width: 0;    
+     overflow:hidden; 
+     float:left;  
+     height:100%;  
+ }
+
+ .accordeon-horiz__info{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-family: 'Ubunty', 'Arial';
+    font-size: rem(14px);
+    text-align: left;
+    color:white;
+    line-height: 2em;
+    box-sizing: border-box;
+    padding-top:rem(55px);
+    padding-left:rem(35px);
+    padding-right:rem(35px);
+    background-color: rgba(81, 80, 90, 0.8);
+}

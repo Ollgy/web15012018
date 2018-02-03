@@ -1,0 +1,327 @@
+$tablets: 768px;
+$phones: 480px;
+
+@function rem($px){
+    @return $px / 16px + 0rem;
+}
+
+@mixin tablets{
+    @media screen and (max-width:$tablets){
+        @content;
+    }
+}
+
+@mixin phones{
+    @media screen and (max-width:$phones){
+        @content;
+    }
+}
+
+
+html{
+    height: 100%;
+    font-size:16px;
+    
+    
+    @include tablets{
+        font-size:14px;
+    }
+    
+    @include phones{
+        font-size:12px;
+    }
+}
+
+body{    
+    width: 100%;
+    height: 100%;
+    text-align: center;
+   
+
+    /* font-size: */
+}
+
+ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+h1,h2,h3{
+    margin-top:0;
+}
+
+.wrapper {
+    position:relative;
+    overflow:hidden;
+    min-height:rem(650px);
+    min-width: 100%;
+
+}
+
+
+.clearfix:after{
+
+    content: "";
+    display: block;
+    clear: both;
+
+}
+
+.container{
+    margin: 0 auto ;
+    position: relative;
+    width:100%;
+    height:100%;
+    padding-left:5%;
+    padding-right:5%;
+    box-sizing:border-box;
+    
+}
+
+.container--team{
+    width: 50%;
+    height: 100%;
+    background-color: rgba(81, 80, 90, 0.9);
+    position:absolute;
+    top:0;
+    left:50%;
+    margin:0;
+    padding-top:rem(115px);
+    padding-left: rem(100px);
+    text-align:left;
+    box-sizing: border-box;
+
+    @include tablets{
+       
+       padding-left:0;
+       padding-right:0;
+       width:100%;
+       left:0;
+       display:flex;
+       flex-direction: column;
+       align-items: center;
+    }
+      
+      @include phones{
+        
+           padding-left:0;
+           padding-right:0;
+           width:100%;
+           left:0;
+           display:flex;
+           flex-direction: column;
+           align-items: center;
+           
+    }
+    
+}
+
+.container--menu{
+    position:absolute;
+    right:0;
+    height:100%;
+    padding-right:0;
+}
+
+.container--form{
+    width: 100%;
+    height: 100%;
+}
+
+.section{
+    width: 100vw;
+    height: 100vh;
+    min-height:rem(650px);
+    position: relative;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    text-align:center;
+    box-sizing:border-box;
+    // z-index:-1000;
+}
+
+.section--start{
+  background-image: url('/img/start/video-bg.jpg');
+  padding-top: rem(15px);
+  padding-bottom: rem(40px);
+}
+
+
+
+.section--best{
+  background-image: url('/img/best/bg.jpg');
+  padding-top:rem(115px);
+}
+
+.section--slider{
+    background-image: linear-gradient(#f9b43b,#eb8d38,#f9b43b);
+
+}
+
+.section--review{
+//   width: 100vw;
+//   height: rem(650px);
+}
+
+.section--team{
+    background-image: url('/img/team/background.jpg');
+}
+
+.section--menu{
+    background-image: url('/img/menu/background.jpg');
+}
+
+.section--contact{
+    background-image: url('/img/contact/map.jpg');
+}
+
+.section--form{
+    background-image: url('/img/form/background.jpg');
+    padding-top:rem(140px);
+    padding-right:15%;
+    padding-left:15%;
+    box-sizing:border-box;
+    width: 100%;
+    height: 100%;
+}
+
+// .section--form:after{
+//     background-image: url('/img/form/logos.png');
+//     position:absolute;
+//     top:0;
+//     left:0;
+//     width: 100%;
+//     height: 100%;
+// }
+
+.title{
+    
+      font-family: 'gagalinregular','Arial';
+      font-size: rem(72px);
+      text-transform: uppercase;
+      font-weight: normal;
+       
+    }
+    
+    .title--start{
+      color: #f9b43b;
+      margin-bottom: rem(15px);
+      margin-top: rem(15px); 
+    
+    }
+    
+    .title--best{
+      color:#2f3234;
+      margin-bottom: rem(40px);
+      
+    }
+
+    .title--team{
+        color: #f9b43b;
+        margin-bottom: rem(55px); 
+      
+      }
+
+      
+
+      .title--menu{
+        color: white;  
+        float:left;   
+        margin-left: 12%; 
+        margin-top: 8%;
+      }
+
+      .title--slider{
+        color: white; 
+        margin-bottom: 0;
+        line-height:1;
+      }
+
+      .title--lmenu{
+        display: block;
+        position:relative;
+        height:100%;
+        text-align: left;
+        color: white;   
+        font-size: rem(40px);
+        writing-mode: vertical-lr;
+        transform:rotate(180deg) translate(50%,0);
+        left:50%;
+        margin:0;
+        padding:0;  
+        
+        @include phones{
+            font-size: rem(25px);
+         }
+      }
+    
+    
+    .ltitle {
+      font-family: 'lifehackmedium','Arial';
+      font-size: rem(65px);    
+      
+    }
+    
+    .ltitle--start{
+      font-size: rem(65px);
+      color: white;
+      text-transform:lowercase;
+      font-stretch: condensed;
+      line-height: 0.9em;
+      margin-left: rem(40px);
+      letter-spacing: -rem(1.5px);
+      font-weight:300;
+      text-align:left;
+      margin-bottom: 0;
+
+      @include tablets{
+        text-align:center;
+      }
+      
+       @include phones{
+         text-align:center;
+     }  
+      
+    }
+
+    .title--team{
+        display:inline-block;
+        color:white;
+        font-size: rem(14px);
+        letter-spacing: rem(1px);
+        margin-bottom:0;
+
+    }
+    
+    .ltitle--best{
+      font-size: rem(24px);
+      color: #2f3234;
+      margin-bottom: rem(15px);
+      line-height: 1.2em;
+      letter-spacing: -rem(0.5px);
+    }
+
+    .title--review{
+        color:white;
+        font-size: rem(14px);
+        letter-spacing: rem(1px);
+        margin-bottom: rem(30px);
+
+        @include tablets{
+            margin-bottom: 0;
+         }
+
+         @include phones{
+            font-size: rem(20px);
+            margin-bottom:rem(30px);
+         }
+
+    }
+
+/* .wrapper:after{
+    content:"";
+    display:block;
+    height:rem(75px);
+} */

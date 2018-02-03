@@ -1,0 +1,116 @@
+.features{
+   display: inline-block;
+  
+
+ }
+
+.features__list{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+
+      
+       @include phones{
+        flex-direction: column;
+        justify-content:center;
+     }  
+}
+
+
+.features__item{
+    display:inline-block;
+    width: 28%;
+    margin-right:rem(36px);
+    vertical-align:top;
+    
+
+    @include phones{
+        display:flex;    
+        flex-direction: row;       
+        width:100%;
+        text-align:left;
+        margin-bottom:rem(30px);
+        
+     }  
+    
+}
+
+.features__desc{
+
+    @include phones{        
+        flex:3
+     }  
+}
+
+.features__item:last-child{
+    margin-right:0;    
+}
+
+.features__image{
+    display:inline-block;
+    text-align: center;
+    background-size:100% auto;
+    width:100%;
+    height:rem(90px);
+    top:0;
+    margin-bottom:rem(20px);
+    z-index:10;
+    background-repeat: no-repeat;
+
+    @include phones{
+        flex:1;
+        margin-left:rem(30px);
+        height:rem(100px);
+        margin-bottom:0;
+     }  
+}
+
+.features__image--meat{
+    width: rem(100px);  
+    margin-left:rem(10px);  
+    background-image: url('/img/best/meat.png'); 
+
+    @include phones{
+       
+        margin-left:0;
+        margin-right:rem(20px);
+     }  
+   
+}
+
+.features__image--hand{
+    width: rem(70px);       
+    background-image: url('/img/best/hand.png'); 
+
+    @include phones{        
+         margin-left:0;
+         margin-right:rem(20px);
+         height:rem(130px);
+      }    
+}
+
+.features__image--natural{
+    width: rem(90px);  
+    margin-right: rem(0px);      
+    background-image: url('/img/best/natural.png'); 
+
+    @include phones{        
+         margin-left:0;
+         margin-right:rem(20px);
+      }  
+      
+}
+
+.title__best{
+    font-family: 'lifehackmedium','Arial';
+    font-size:rem(24px);
+    color:white;
+}
+
+.features__text{
+    font-family: 'Ubuntu', 'Arial';
+    font-weight:300;
+    font-size: rem(14px);
+    color: #585a5a; 
+    line-height: 1.7em;
+}
