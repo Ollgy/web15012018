@@ -196,7 +196,7 @@ function init() {
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
-            iconImageHref: '../img/icons/contacts/map-marker.svg',
+            iconImageHref: 'img/icons/contacts/map-marker.svg',
             // Размеры метки.
             iconImageSize: [48, 48],
             // Смещение левого верхнего угла иконки относительно
@@ -214,7 +214,7 @@ function init() {
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
-            iconImageHref: '../img/icons/contacts/map-marker.svg',
+            iconImageHref: 'img/icons/contacts/map-marker.svg',
             // Размеры метки.
             iconImageSize: [48, 48],
             // Смещение левого верхнего угла иконки относительно
@@ -232,7 +232,7 @@ function init() {
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
-            iconImageHref: '../img/icons/contacts/map-marker.svg',
+            iconImageHref: 'img/icons/contacts/map-marker.svg',
             // Размеры метки.
             iconImageSize: [48, 48],
             // Смещение левого верхнего угла иконки относительно
@@ -250,7 +250,7 @@ function init() {
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
-            iconImageHref: '../img/icons/contacts/map-marker.svg',
+            iconImageHref: 'img/icons/contacts/map-marker.svg',
             // Размеры метки.
             iconImageSize: [48, 48],
             // Смещение левого верхнего угла иконки относительно
