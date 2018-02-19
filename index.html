@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
+    </script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/normalize/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/mainn.css">
@@ -16,108 +18,137 @@
         <div class="sidebar">
             <ul class="sidebar__list">
                 <li class="sidebar__item">
-                    <div class="sidebar__point sidebar__point--active">
+                    <div class="sidebar__point sidebar__point--active" section='0'>
                         <a href="" class="sidebar__link"></a>
                     </div>
                 </li>
                 <li class="sidebar__item">
-                    <div class="sidebar__point">
+                    <div class="sidebar__point" section='1'>
                         <a href="" class="sidebar__link"></a>
                     </div>
                 </li>
                 <li class="sidebar__item">
-                    <div class="sidebar__point">
+                    <div class="sidebar__point" section='2'>
                         <a href="" class="sidebar__link"></a>
                     </div>
                 </li>
                 <li class="sidebar__item">
-                    <div class="sidebar__point">
+                    <div class="sidebar__point" section='3'>
                         <a href="" class="sidebar__link"></a>
                     </div>
                 </li>
                 <li class="sidebar__item">
-                    <div class="sidebar__point">
+                    <div class="sidebar__point" section='4'>
                         <a href="" class="sidebar__link"></a>
                     </div>
                 </li>
                 <li class="sidebar__item">
-                    <div class="sidebar__point">
+                    <div class="sidebar__point" section='5'>
                         <a href="" class="sidebar__link"></a>
                     </div>
                 </li>
                 <li class="sidebar__item">
-                    <div class="sidebar__point">
+                    <div class="sidebar__point" section='6'>
                         <a href="" class="sidebar__link"></a>
                     </div>
                 </li>
                 <li class="sidebar__item">
-                    <div class="sidebar__point">
+                    <div class="sidebar__point" section='7'>
                         <a href="" class="sidebar__link"></a>
                     </div>
                 </li>
             </ul>
         </div>
 
-        <div class="content">
-            <section class="section section--start">
-                <div class="texture"></div>
-                <div class="fullscrmenu">
-                    <div class="header__logo header__logo--fullscrmenu"></div>
-                    <div class="exitmark"></div>
-                    <nav class="fullscrmenu__nav">
-                        <ul class="nav__list">
-                            <li class="nav__item nav__item--fullscrmenu">
-                                <a href="" class="nav__link">о нас</a>
-                            </li>
-                            <li class="nav__item nav__item--fullscrmenu">
-                                <a href="" class="nav__link">бургеры</a>
-                            </li>
-                            <li class="nav__item nav__item--fullscrmenu">
-                                <a href="" class="nav__link">команда</a>
-                            </li>
-                            <li class="nav__item nav__item--fullscrmenu">
-                                <a href="" class="nav__link">меню</a>
-                            </li>
-                            <li class="nav__item nav__item--fullscrmenu">
-                                <a href="" class="nav__link">отзывы</a>
-                            </li>
-                            <li class="nav__item nav__item--fullscrmenu">
-                                <a href="" class="nav__link">контакты</a>
-                            </li>
-                        </ul>
-                    </nav>
+        <div class="fullscrmenu">
+            <div class="header__logo header__logo--fullscrmenu"></div>
+            <div class="exitmark exitmark--menu">
+                <svg class="exit__icon">
+                    <use xlink:href="img/icons/sprite/sprite.svg#exit_mark"></use>
+                </svg>
+            </div>
+            <nav class="fullscrmenu__nav">
+                <ul class="nav__list">
+                    <li class="nav__item nav__item--fullscrmenu">
+                        <a href="" class="nav__link" data-scroll-to='1'>о нас</a>
+                    </li>
+                    <li class="nav__item nav__item--fullscrmenu">
+                        <a href="" class="nav__link" data-scroll-to='2'>бургеры</a>
+                    </li>
+                    <li class="nav__item nav__item--fullscrmenu">
+                        <a href="" class="nav__link" data-scroll-to='3'>команда</a>
+                    </li>
+                    <li class="nav__item nav__item--fullscrmenu">
+                        <a href="" class="nav__link" data-scroll-to='4'>меню</a>
+                    </li>
+                    <li class="nav__item nav__item--fullscrmenu">
+                        <a href="" class="nav__link" data-scroll-to='5'>отзывы</a>
+                    </li>
+                    <li class="nav__item nav__item--fullscrmenu">
+                        <a href="" class="nav__link" data-scroll-to='7'>контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
+        <script type="template" id='reviewTemplate'>
+            <div class="reviewmodal__text">
+                <div class="exitmark exitmark--reviewmodal">
+                    <svg class="exit__icon">
+                        <use xlink:href="img/icons/sprite/sprite.svg#exit_mark"></use>
+                    </svg>
                 </div>
+                <h1 class="title title--reviewmodal">константин спилберг</h1>
+                <div class="reviewmodal__description">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки
+                    могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.Мысли все о них и о них,
+                    о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими,
+                    котлетка такой сочной, а сыр таким расплавленным.</div>
+            </div>
+        </script>
+
+        <script type="template" id="formTemplate">
+            <div class="formmodal__text">
+                <div class ="formmodal__msg"></div>
+                <button class="buy__button" id="btnformmodal">Закрыть</button>
+            </div>            
+        </script>
+
+        <div class="content">
+            <section class="section section--start active">
+                <div class="texture"></div>
+
                 <div class="container">
                     <header class="header clearfix">
                         <div class="header__logo"></div>
                         <div class="header_hamburger">
-                            <div class="header__hamburger-strip"></div>
-                            <div class="header__hamburger-strip"></div>
-                            <div class="header__hamburger-strip"></div>
+                            <a href="" class="header_hamburger-link">
+                                <div class="header__hamburger-strip"></div>
+                                <div class="header__hamburger-strip"></div>
+                                <div class="header__hamburger-strip"></div>
+                            </a>
                         </div>
                         <div class="header__button">
-                            <button class="buy__button">Заказать</button>
+                            <button class="buy__button" data-scroll-to='6'>Заказать</button>
                         </div>
                         <nav class="nav">
                             <ul class="nav__list">
                                 <li class="nav__item">
-                                    <a href="" class="nav__link">о нас</a>
+                                    <a href="" class="nav__link" data-scroll-to='1'>о нас</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="" class="nav__link">бургеры</a>
+                                    <a href="" class="nav__link" data-scroll-to='2'>бургеры</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="" class="nav__link">команда</a>
+                                    <a href="" class="nav__link" data-scroll-to='3'>команда</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="" class="nav__link">меню</a>
+                                    <a href="" class="nav__link" data-scroll-to='4'>меню</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="" class="nav__link">отзывы</a>
+                                    <a href="" class="nav__link" data-scroll-to='5'>отзывы</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="" class="nav__link">контакты</a>
+                                    <a href="" class="nav__link" data-scroll-to='7'>контакты</a>
                                 </li>
                             </ul>
                         </nav>
@@ -143,7 +174,7 @@
             </section>
 
             <section class="section section--best">
-                <div class="container">
+                <div class="container container--best">
                     <h1 class="title title--best">мы лучшие</h1>
                     <div class="features">
                         <ul class="features__list">
@@ -181,18 +212,95 @@
 
             <section class="section section--slider">
                 <div class="container container--slider">
+                    <div class="slider__arrow slider__arrow--left">
+                        <a href="" class="slider__link slider__link--left">
+                            <svg class="icon__arrow icon__arrow--left">
+                                <use xlink:href="img/icons/sprite/sprite.svg#slider_arrow"></use>
+                            </svg>
+                        </a>
+                    </div>
                     <div class="slider">
-                        <div class="slider__arrow slider__arrow--left">
-                            <a href="" class="slider__link slider__link--left">
-                                <svg class="icon__arrow icon__arrow--left">
-                                    <use xlink:href="img/icons/sprite/sprite.svg#slider_arrow"></use>
-                                </svg>
-                            </a>
-                        </div>
                         <div class="slider__content">
                             <ul class="slider__list">
                                 <li class="slider__item">
-                                    <div class="slider__image"></div>
+                                    <div class="slider__icon slider__icon--composition">
+                                        <div class="slider__icon-image">
+                                            <svg class="icon__burger">
+                                                <use xlink:href="img/icons/sprite/sprite.svg#burger"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider__icon-text slider__icon-text--composition">состав</div>
+                                        <div class="composition-dropdown">
+                                            <ul class="composition-dropdown__list">
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#beef"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Говядина</div>
+                                                    <div class="composition-dropdown__weight">300г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#buns"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Булочки</div>
+                                                    <div class="composition-dropdown__weight">100г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#salad"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Зелень</div>
+                                                    <div class="composition-dropdown__weight">70г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#sauce"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Соус</div>
+                                                    <div class="composition-dropdown__weight">150г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#cucumber"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Овощи</div>
+                                                    <div class="composition-dropdown__weight">200г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#cheese"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Сыр</div>
+                                                    <div class="composition-dropdown__weight">80г</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="slider__icon slider__icon--kkal">
+                                        <div class="composition__image">
+                                            <svg class="icon__kkal">
+                                                <use xlink:href="img/icons/sprite/sprite.svg#kkal"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider__icon-text slider__icon-text--num-kkal">1200</div>
+                                        <div class="slider__icon-text slider__icon-text--kkal">ккал</div>
+                                    </div>
+                                    <div class="slider__image" style="background-image:url('../img/slider/black_burger.png')">
+                                    </div>
                                     <div class="slider__text">
                                         <h1 class="title title--slider">dark beef burger</h1>
                                         <div class="slider__desc">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками
@@ -200,59 +308,408 @@
                                             с добавлением экзотического соуса чураско.</div>
                                         <div class="slider__buy">
                                             <span class="slider__price">
-                                                <span style="font-size:72px">500</span> руб</span>
-                                            <button class="buy__button">Заказать</button>
+                                                <span class="slider__price-sum">500</span> рублей</span>
+                                            <button class="buy__button" style="transform: translate(0,50%)">Заказать</button>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="slider__item">
+                                    <div class="slider__icon slider__icon--composition">
+                                        <div class="slider__icon-image">
+                                            <svg class="icon__burger">
+                                                <use xlink:href="img/icons/sprite/sprite.svg#burger"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider__icon-text slider__icon-text--composition">состав</div>
+                                        <div class="composition-dropdown">
+                                            <ul class="composition-dropdown__list">
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#beef"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Говядина</div>
+                                                    <div class="composition-dropdown__weight">300г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#buns"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Булочки</div>
+                                                    <div class="composition-dropdown__weight">100г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#salad"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Зелень</div>
+                                                    <div class="composition-dropdown__weight">70г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#sauce"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Соус</div>
+                                                    <div class="composition-dropdown__weight">150г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#cucumber"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Овощи</div>
+                                                    <div class="composition-dropdown__weight">200г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#cheese"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Сыр</div>
+                                                    <div class="composition-dropdown__weight">80г</div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
 
+                                    <div class="slider__icon slider__icon--kkal">
+                                        <div class="composition__image">
+                                            <svg class="icon__kkal">
+                                                <use xlink:href="img/icons/sprite/sprite.svg#kkal"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider__icon-text slider__icon-text--num-kkal">1200</div>
+                                        <div class="slider__icon-text slider__icon-text--kkal">ккал</div>
+                                    </div>
+                                    <div class="slider__image" style="background-image:url('../img/slider/burger_sandwich.png')">
+                                    </div>
+                                    <div class="slider__text">
+                                        <h1 class="title title--slider">burger sandwich</h1>
+                                        <div class="slider__desc">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками
+                                            нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь
+                                            с добавлением экзотического соуса чураско.</div>
+                                        <div class="slider__buy">
+                                            <span class="slider__price">
+                                                <span class="slider__price-sum">500</span> рублей</span>
+                                            <button class="buy__button" style="transform: translate(0,50%)">Заказать</button>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="slider__item">
+                                    <div class="slider__icon slider__icon--composition">
+                                        <div class="slider__icon-image">
+                                            <svg class="icon__burger">
+                                                <use xlink:href="img/icons/sprite/sprite.svg#burger"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider__icon-text slider__icon-text--composition">состав</div>
+                                        <div class="composition-dropdown">
+                                            <ul class="composition-dropdown__list">
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#beef"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Говядина</div>
+                                                    <div class="composition-dropdown__weight">300г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#buns"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Булочки</div>
+                                                    <div class="composition-dropdown__weight">100г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#salad"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Зелень</div>
+                                                    <div class="composition-dropdown__weight">70г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#sauce"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Соус</div>
+                                                    <div class="composition-dropdown__weight">150г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#cucumber"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Овощи</div>
+                                                    <div class="composition-dropdown__weight">200г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#cheese"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Сыр</div>
+                                                    <div class="composition-dropdown__weight">80г</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="slider__icon slider__icon--kkal">
+                                        <div class="composition__image">
+                                            <svg class="icon__kkal">
+                                                <use xlink:href="img/icons/sprite/sprite.svg#kkal"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider__icon-text slider__icon-text--num-kkal">1200</div>
+                                        <div class="slider__icon-text slider__icon-text--kkal">ккал</div>
+                                    </div>
+                                    <div class="slider__image" style="background-image:url('../img/slider/bacon-cheeseburger.png')">
+                                    </div>
+                                    <div class="slider__text">
+                                        <h1 class="title title--slider">bacon cheese burger</h1>
+                                        <div class="slider__desc">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками
+                                            нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь
+                                            с добавлением экзотического соуса чураско.</div>
+                                        <div class="slider__buy">
+                                            <span class="slider__price">
+                                                <span class="slider__price-sum">500</span> рублей</span>
+                                            <button class="buy__button" style="transform: translate(0,50%)">Заказать</button>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="slider__item">
+                                    <div class="slider__icon slider__icon--composition">
+                                        <div class="slider__icon-image">
+                                            <svg class="icon__burger">
+                                                <use xlink:href="img/icons/sprite/sprite.svg#burger"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider__icon-text slider__icon-text--composition">состав</div>
+
+                                        <div class="composition-dropdown">
+                                            <ul class="composition-dropdown__list">
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#beef"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Говядина</div>
+                                                    <div class="composition-dropdown__weight">300г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#buns"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Булочки</div>
+                                                    <div class="composition-dropdown__weight">100г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#salad"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Зелень</div>
+                                                    <div class="composition-dropdown__weight">70г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#sauce"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Соус</div>
+                                                    <div class="composition-dropdown__weight">150г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#cucumber"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Овощи</div>
+                                                    <div class="composition-dropdown__weight">200г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#cheese"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Сыр</div>
+                                                    <div class="composition-dropdown__weight">80г</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="slider__icon slider__icon--kkal">
+                                        <div class="composition__image">
+                                            <svg class="icon__kkal">
+                                                <use xlink:href="img/icons/sprite/sprite.svg#kkal"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider__icon-text slider__icon-text--num-kkal">1200</div>
+                                        <div class="slider__icon-text slider__icon-text--kkal">ккал</div>
+                                    </div>
+                                    <div class="slider__image" style="background-image:url('../img/slider/chiken_burger.png')">
+                                    </div>
+                                    <div class="slider__text">
+                                        <h1 class="title title--slider">chiken burger</h1>
+                                        <div class="slider__desc">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками
+                                            нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь
+                                            с добавлением экзотического соуса чураско.</div>
+                                        <div class="slider__buy">
+                                            <span class="slider__price">
+                                                <span class="slider__price-sum">500</span> рублей</span>
+                                            <button class="buy__button" style="transform: translate(0,50%)">Заказать</button>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="slider__item">
+                                    <div class="slider__icon slider__icon--composition">
+                                        <div class="slider__icon-image">
+                                            <svg class="icon__burger">
+                                                <use xlink:href="img/icons/sprite/sprite.svg#burger"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider__icon-text slider__icon-text--composition">состав</div>
+                                        <div class="composition-dropdown">
+                                            <ul class="composition-dropdown__list">
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#beef"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Говядина</div>
+                                                    <div class="composition-dropdown__weight">300г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#buns"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Булочки</div>
+                                                    <div class="composition-dropdown__weight">100г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#salad"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Зелень</div>
+                                                    <div class="composition-dropdown__weight">70г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#sauce"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Соус</div>
+                                                    <div class="composition-dropdown__weight">150г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#cucumber"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Овощи</div>
+                                                    <div class="composition-dropdown__weight">200г</div>
+                                                </li>
+                                                <li class="composition-dropdown__item">
+                                                    <div class="composition-dropdown__icon">
+                                                        <svg class="icon__compos">
+                                                            <use xlink:href="img/icons/sprite/sprite.svg#cheese"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="composition-dropdown__text">Сыр</div>
+                                                    <div class="composition-dropdown__weight">80г</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="slider__icon slider__icon--kkal">
+                                        <div class="composition__image">
+                                            <svg class="icon__kkal">
+                                                <use xlink:href="img/icons/sprite/sprite.svg#kkal"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="slider__icon-text slider__icon-text--num-kkal">1200</div>
+                                        <div class="slider__icon-text slider__icon-text--kkal">ккал</div>
+                                    </div>
+                                    <div class="slider__image" style="background-image:url('../img/slider/spicy_burger.png')">
+                                    </div>
+                                    <div class="slider__text">
+                                        <h1 class="title title--slider">spicy burger</h1>
+                                        <div class="slider__desc">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками
+                                            нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь
+                                            с добавлением экзотического соуса чураско.</div>
+                                        <div class="slider__buy">
+                                            <span class="slider__price">
+                                                <span class="slider__price-sum">500</span> рублей</span>
+                                            <button class="buy__button" style="transform: translate(0,50%)">Заказать</button>
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
-
-                            <div class="slider__icon slider__icon--composition">
-                                <div class="slider__icon-image">
-                                    <svg class="icon__burger">
-                                        <use xlink:href="img/icons/sprite/sprite.svg#burger"></use>
-                                    </svg>
-                                </div>
-                                <div class="slider__icon-text .slider__icon-text--composition">состав</div>
-                            </div>
-
-                            <div class="slider__icon slider__icon--kkal">
-                                <div class="composition__image">
-                                    <svg class="icon__burger">
-                                        <use xlink:href="img/icons/sprite/sprite.svg#kkal"></use>
-                                    </svg>
-                                </div>
-                                <div class="slider__icon-text .slider__icon-text--kkal">ккал</div>
-                            </div>
-
-                        </div>
-                        <div class="slider__arrow slider__arrow--right">
-                            <a href="" class="slider__link slider__link--right">
-                                <svg class="icon__arrow icon__arrow--right">
-                                    <use xlink:href="img/icons/sprite/sprite.svg#slider_arrow"></use>
-                                </svg>
-                            </a>
                         </div>
                     </div>
+                    <div class="slider__arrow slider__arrow--right">
+                        <a href="" class="slider__link slider__link--right">
+                            <svg class="icon__arrow icon__arrow--right">
+                                <use xlink:href="img/icons/sprite/sprite.svg#slider_arrow"></use>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-
             </section>
 
             <section class="section section--team">
                 <div class="container container--team">
-
-                    <h1 class="title title--start">команда</h1>
                     <div class="accordeon">
+                        <h1 class="title title--start">команда</h1>
                         <ul class="accordeon__list">
                             <li class="accordeon__item">
-                                <div class="accordeon__title">
-                                    <div class="triangle triangle--bottom"></div>
-                                    <h3 class="title title--team">дэниэл рэдклиф</h3>
-                                </div>
+                                <a href="" class="accordeon__link">
+                                    <div class="accordeon__title">
+                                        <div class="triangle triangle--bottom"></div>
+                                        <h3 class="title title--team">дэниэл рэдклиф</h3>
+                                    </div>
+                                </a>
                                 <div class="accordeon__content">
                                     <div class="accordeon__foto">
-                                        <!-- <img src="/img/team/photo2.jpg" alt="Рэдклиф" class="accordeon__avatar accordeon__avatar--hidden"> -->
+                                        <!-- <img src="../img/team/photo2.jpg" alt="Рэдклиф" class="accordeon__avatar accordeon__avatar--hidden"> -->
                                     </div>
                                     <div class="accordeon__info">
                                         <span class="info__function">Оператор</span>
@@ -262,13 +719,15 @@
                             </li>
 
                             <li class="accordeon__item accordeon__item--active">
-                                <div class="accordeon__title">
-                                    <div class="triangle triangle--bottom"></div>
-                                    <h3 class="title title--team">ричард джеймс</h3>
-                                </div>
+                                <a href="" class="accordeon__link">
+                                    <div class="accordeon__title">
+                                        <div class="triangle triangle--bottom"></div>
+                                        <h3 class="title title--team">ричард джеймс</h3>
+                                    </div>
+                                </a>
                                 <div class="accordeon__content">
                                     <div class="accordeon__foto">
-                                        <!-- <img src="/img/team/photo2.jpg" alt="Рэдклиф" class="accordeon__avatar accordeon__avatar--hidden"> -->
+                                        <!-- <img src="../img/team/photo2.jpg" alt="Рэдклиф" class="accordeon__avatar accordeon__avatar--hidden"> -->
                                     </div>
                                     <div class="accordeon__info">
                                         <span class="info__function">Оператор</span>
@@ -278,29 +737,34 @@
                             </li>
 
                             <li class="accordeon__item ">
-                                <div class="accordeon__title">
-                                    <div class="triangle triangle--bottom"></div>
-                                    <h3 class="title title--team">джейк финн</h3>
-                                </div>
+                                <a href="" class="accordeon__link">
+                                    <div class="accordeon__title">
+                                        <div class="triangle triangle--bottom"></div>
+                                        <h3 class="title title--team">джейк финн</h3>
+                                    </div>
+                                </a>
                                 <div class="accordeon__content">
                                     <div class="accordeon__foto">
-                                        <!-- <img src="/img/team/photo2.jpg" alt="Рэдклиф" class="accordeon__avatar accordeon__avatar--hidden"> -->
+                                        <!-- <img src="../img/team/photo2.jpg" alt="Рэдклиф" class="accordeon__avatar accordeon__avatar--hidden"> -->
                                     </div>
                                     <div class="accordeon__info">
                                         <span class="info__function">Оператор</span>
                                         <span class="info__text">С радостью поможет подобрать идеальный бургер и оформить заказ. </span>
                                     </div>
                                 </div>
+
                             </li>
 
                             <li class="accordeon__item">
-                                <div class="accordeon__title">
-                                    <div class="triangle triangle--bottom"></div>
-                                    <h3 class="title title--team">николай иванов</h3>
-                                </div>
+                                <a href="" class="accordeon__link">
+                                    <div class="accordeon__title">
+                                        <div class="triangle triangle--bottom"></div>
+                                        <h3 class="title title--team">николай иванов</h3>
+                                    </div>
+                                </a>
                                 <div class="accordeon__content">
                                     <div class="accordeon__foto">
-                                        <!-- <img src="/img/team/photo2.jpg" alt="Рэдклиф" class="accordeon__avatar accordeon__avatar--hidden"> -->
+                                        <!-- <img src="../img/team/photo2.jpg" alt="Рэдклиф" class="accordeon__avatar accordeon__avatar--hidden"> -->
                                     </div>
                                     <div class="accordeon__info">
                                         <span class="info__function">Оператор</span>
@@ -317,14 +781,23 @@
             <section class="section section--menu">
                 <h1 class="title title--menu">меню</h1>
                 <div class="container container--menu clearfix">
-                    <div class="accordeon-horiz">
+                    <div class="accordeon-horiz clearfix">
                         <ul class="accordeon-horiz__list clearfix">
-                            <li class="accordeon-horiz__item accordeon-horiz__item--active clearfix">
+                            <li class="accordeon-horiz__item clearfix">
+
                                 <div class="accordeon-horiz__title accordeon-horiz__title--meat">
-                                    <div class="accordeon-horiz__titlebkg"></div>
-                                    <h3 class="title title--lmenu">для мясоедов</h3>
+                                    <a href="" class="accordeon-horiz__link">
+                                        <div class="accordeon-horiz__titlebkg"></div>
+                                        <h3 class="title title--lmenu">для мясоедов</h3>
+                                    </a>
                                 </div>
+
                                 <div class="accordeon-horiz__content">
+                                    <div class="exitmark exitmark--acco">
+                                        <svg class="exit__icon">
+                                            <use xlink:href="img/icons/sprite/sprite.svg#exit_mark"></use>
+                                        </svg>
+                                    </div>
                                     <span class="accordeon-horiz__info">
                                         Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений.
                                         Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно
@@ -339,10 +812,18 @@
 
                             <li class="accordeon-horiz__item clearfix">
                                 <div class="accordeon-horiz__title accordeon-horiz__title--vegan">
-                                    <div class="accordeon-horiz__titlebkg"></div>
-                                    <h3 class="title title--lmenu">для вегетарианцев</h3>
+                                    <a href="" class="accordeon-horiz__link">
+                                        <div class="accordeon-horiz__titlebkg"></div>
+                                        <h3 class="title title--lmenu">для вегетарианцев</h3>
+                                    </a>
                                 </div>
+
                                 <div class="accordeon-horiz__content">
+                                    <div class="exitmark exitmark--acco">
+                                        <svg class="exit__icon">
+                                            <use xlink:href="img/icons/sprite/sprite.svg#exit_mark"></use>
+                                        </svg>
+                                    </div>
                                     <span class="accordeon-horiz__info">
                                         Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений.
                                         Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно
@@ -353,14 +834,24 @@
                                         стал особенно чутко относиться к слову.
                                     </span>
                                 </div>
+
                             </li>
 
                             <li class="accordeon-horiz__item clearfix">
+
                                 <div class="accordeon-horiz__title accordeon-horiz__title--diet">
-                                    <div class="accordeon-horiz__titlebkg"></div>
-                                    <h3 class="title title--lmenu">диетическое</h3>
+                                    <a href="" class="accordeon-horiz__link">
+                                        <div class="accordeon-horiz__titlebkg"></div>
+                                        <h3 class="title title--lmenu">диетическое</h3>
+                                    </a>
                                 </div>
+
                                 <div class="accordeon-horiz__content">
+                                    <div class="exitmark exitmark--acco">
+                                        <svg class="exit__icon">
+                                            <use xlink:href="img/icons/sprite/sprite.svg#exit_mark"></use>
+                                        </svg>
+                                    </div>
                                     <span class="accordeon-horiz__info">
                                         Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений.
                                         Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно
@@ -371,6 +862,7 @@
                                         стал особенно чутко относиться к слову.
                                     </span>
                                 </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -381,8 +873,8 @@
                 <div class="review">
                     <ul class="review__list clearfix">
                         <li class="review__item">
-                            <div class="review__avatar" style="background-image: url('/img/review/photo2.jpg')">
-                                <img src="/img/review/photo2.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
+                            <div class="review__avatar" style="background-image: url('../img/review/photo2.jpg')">
+                                <img src="../img/review/photo2.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
 
                             </div>
 
@@ -394,8 +886,8 @@
                             </div>
                         </li>
                         <li class="review__item">
-                            <div class="review__avatar review__avatar--photo3" style="background-image: url('/img/review/photo3.jpg'); background-position: left">
-                                <img src="/img/review/photo3.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
+                            <div class="review__avatar review__avatar--photo3" style="background-image: url('../img/review/photo3.jpg'); background-position: left">
+                                <img src="../img/review/photo3.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
 
                             </div>
 
@@ -407,8 +899,8 @@
                             </div>
                         </li>
                         <li class="review__item">
-                            <div class="review__avatar review__avatar--photo4" style="background-image: url('/img/review/photo4.jpg')">
-                                <img src="/img/review/photo4.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
+                            <div class="review__avatar review__avatar--photo4" style="background-image: url('../img/review/photo4.jpg')">
+                                <img src="../img/review/photo4.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
 
                             </div>
 
@@ -420,8 +912,8 @@
                             </div>
                         </li>
                         <li class="review__item">
-                            <div class="review__avatar review__avatar--photo5" style="background-image: url('/img/review/photo5.jpg')">
-                                <img src="/img/review/photo5.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
+                            <div class="review__avatar review__avatar--photo5" style="background-image: url('../img/review/photo5.jpg')">
+                                <img src="../img/review/photo5.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
 
                             </div>
 
@@ -433,8 +925,8 @@
                             </div>
                         </li>
                         <li class="review__item">
-                            <div class="review__avatar review__avatar--photo1" style="background-image: url('/img/review/photo1.jpg')">
-                                <img src="/img/review/photo1.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
+                            <div class="review__avatar review__avatar--photo1" style="background-image: url('../img/review/photo1.jpg')">
+                                <img src="../img/review/photo1.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
 
                             </div>
 
@@ -446,8 +938,8 @@
                             </div>
                         </li>
                         <li class="review__item">
-                            <div class="review__avatar review__avatar--photo8" style="background-image: url('/img/review/photo8.jpg')">
-                                <img src="/img/review/photo8.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
+                            <div class="review__avatar review__avatar--photo8" style="background-image: url('../img/review/photo8.jpg')">
+                                <img src="../img/review/photo8.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
 
                             </div>
 
@@ -459,8 +951,8 @@
                             </div>
                         </li>
                         <li class="review__item">
-                            <div class="review__avatar review__avatar--photo7" style="background-image: url('/img/review/photo7.jpg')">
-                                <img src="/img/review/photo7.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
+                            <div class="review__avatar review__avatar--photo7" style="background-image: url('../img/review/photo7.jpg')">
+                                <img src="../img/review/photo7.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
 
                             </div>
 
@@ -472,8 +964,8 @@
                             </div>
                         </li>
                         <li class="review__item">
-                            <div class="review__avatar review__avatar--photo6" style="background-image: url('/img/review/photo6.jpg')">
-                                <img src="/img/review/photo6.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
+                            <div class="review__avatar review__avatar--photo6" style="background-image: url('../img/review/photo6.jpg')">
+                                <img src="../img/review/photo6.jpg" alt="Анна" class="review__avatar review__avatar--hidden">
 
                             </div>
 
@@ -489,67 +981,69 @@
             </section>
 
             <section class="section section--form">
+                <div class="texture_form"></div>
                 <div class="container container--form">
                     <h1 class="title title--start">закажите доставку</h1>
-                    <div class="form__container">
-                        <form action="" class="form">
+
+                    <form class="form" id="order-form" action="server.php" method="get" name='form'>
+                        <div class="form__container">
                             <div class="form__row">
                                 <label for="" class="form__block">
                                     <div class="form__title">Имя</div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" id="name" name="name">
                                 </label>
                                 <label for="" class="form__block">
                                     <div class="form__title">Телефон</div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" id="phone" name="phone">
                                 </label>
                             </div>
 
                             <div class="form__row">
                                 <label for="" class="form__block">
                                     <div class="form__title">Улица</div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" id="street" name="street">
                                 </label>
                             </div>
 
                             <div class="form__row">
                                 <label for="" class="form__block">
                                     <div class="form__title">Дом</div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" id="home" name="home">
                                 </label>
                                 <label for="" class="form__block">
                                     <div class="form__title">Корпус</div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" id="building" name="building">
                                 </label>
                                 <label for="" class="form__block">
                                     <div class="form__title">Квартира</div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" id="flat" name="flat">
                                 </label>
                                 <label for="" class="form__block">
                                     <div class="form__title">Этаж</div>
-                                    <input type="text" class="form__input">
+                                    <input type="text" class="form__input" id="stage" name="stage">
                                 </label>
                             </div>
-                        </form>
+                        </div>
 
-                        <form action="" class="form">
+                        <div class="form__container">
                             <div class="form__row">
                                 <label for="" class="form__block">
                                     <div class="form__title">Комментарий</div>
-                                    <textarea class="form__textarea" type="textarea" placeholder=""></textarea>
+                                    <textarea class="form__textarea" type="textarea" placeholder="" id="comment" name="comment"></textarea>
                                 </label>
                             </div>
 
                             <div class="form__row">
 
                                 <label class="form__radio">
-                                    <input class="form__radiobtn" type="radio" name="payment" checked>
+                                    <input class="form__radiobtn" type="radio" name="payment" id="pay_cash" value="Наличные" checked>
                                     <div class="form__custombtn"></div>
                                     <span class="form__radiotitle">
                                         Потребуется сдача</span>
                                 </label>
 
                                 <label class="form__radio">
-                                    <input class="form__radiobtn" type="radio" name="payment">
+                                    <input class="form__radiobtn" type="radio" name="payment" id="pay_card" value="Картой">
                                     <div class="form__custombtn"></div>
                                     <span class="form__radiotitle">
                                         Оплата по карте </span>
@@ -560,24 +1054,25 @@
 
                             <div class="form__row">
                                 <label class="form__checkbox">
-                                    <input type="checkbox" class="form__markchb" checked>
+                                    <input type="checkbox" class="form__markchb" id="noring" name="noring" value='1' checked>
                                     <div class="form__customchb"></div>
                                     <span class="form__title">Не перезванивать</span>
                                 </label>
                             </div>
 
                             <div class="form__row">
-                                <button class="buy__button buy__button--form">Заказать</button>
+                                <button type="submit" class="buy__button buy__button--form" id="buy">Заказать</button>
                                 <a href="" class="form__reset">
                                     <span class="form__title">Очистить</span>
                                 </a>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </section>
 
             <section class="section section--contact">
+                <div id="map" class="section"></div>
                 <footer class="footer">
                     <div class="footer__contacts">
                         <span class="contacts__address">Санкт-Петербург, ул.Бабушкина, д.12/1, 15</span>
@@ -591,29 +1086,40 @@
                     </div>
                     <div class="footer__social">
 
-                        <svg class="social__icon">
-                            <use xlink:href="img/icons/sprite/sprite.svg#vk"></use>
-                        </svg>
+                        <a href="" class="social__link">
+                            <svg class="social__icon social__icon--vk">
+                                <use xlink:href="img/icons/sprite/sprite.svg#vk"></use>
+                            </svg>
+                        </a>
 
-                        <svg class="social__icon">
-                            <use xlink:href="img/icons/sprite/sprite.svg#fb"></use>
-                        </svg>
+                        <a href="" class="social__link">
+                            <svg class="social__icon">
+                                <use xlink:href="img/icons/sprite/sprite.svg#fb"></use>
+                            </svg>
+                        </a>
 
+                        <a href="" class="social__link"></a>
                         <svg class="social__icon">
                             <use xlink:href="img/icons/sprite/sprite.svg#inst"></use>
                         </svg>
+                        </a>
 
+                        <a href="" class="social__link"></a>
                         <svg class="social__icon">
                             <use xlink:href="img/icons/sprite/sprite.svg#twitter"></use>
                         </svg>
+                        </a>
                     </div>
                 </footer>
             </section>
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.1/mobile-detect.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/3.2.2/jquery.dotdotdot.js"></script>
     <script src="js/inst.js"></script>
-
 </body>
 
 </html>

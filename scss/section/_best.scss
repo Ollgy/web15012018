@@ -1,5 +1,6 @@
 .features{
    display: inline-block;
+   width:97%;
   
 
  }
@@ -19,7 +20,7 @@
 
 .features__item{
     display:inline-block;
-    width: 28%;
+    width: 33%;
     margin-right:rem(36px);
     vertical-align:top;
     
@@ -68,7 +69,7 @@
 .features__image--meat{
     width: rem(100px);  
     margin-left:rem(10px);  
-    background-image: url('/img/best/meat.png'); 
+    background-image: url('../img/best/meat.png'); 
 
     @include phones{
        
@@ -80,7 +81,7 @@
 
 .features__image--hand{
     width: rem(70px);       
-    background-image: url('/img/best/hand.png'); 
+    background-image: url('../img/best/hand.png'); 
 
     @include phones{        
          margin-left:0;
@@ -92,7 +93,7 @@
 .features__image--natural{
     width: rem(90px);  
     margin-right: rem(0px);      
-    background-image: url('/img/best/natural.png'); 
+    background-image: url('../img/best/natural.png'); 
 
     @include phones{        
          margin-left:0;

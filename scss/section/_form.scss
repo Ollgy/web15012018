@@ -1,17 +1,33 @@
-.form__container{
+$tablets: 768px;
+$phones: 480px;
+@mixin tablets{
+    @media screen and (max-width:$tablets){
+        @content;
+    }
+}
+
+@mixin phones{
+    @media screen and (max-width:$phones){
+        @content;
+    }
+}
+
+.form{
     display:flex;
     flex-direction:row;
 
     @include tablets{
         flex-direction:column;
+        width: 80%;
      }
 
      @include phones{
         flex-direction:column;
+        width: 94%;
      }
    
 }
-.form{
+.form__container{
     color:#fff;
     width: 50%;
     flex:wrap;
@@ -27,6 +43,7 @@
 
      @include phones{
         width: 100%;
+        
      }
 }
 
@@ -34,6 +51,10 @@
     margin-bottom:rem(17px);
     display:flex; 
     align-items:center;  
+
+     @include phones{
+        justify-content:center;        
+     }
 }
 
 .form__block{
@@ -57,6 +78,7 @@
     display:block;
     outline: 0;
     outline-offset:0;
+    color:#2f3234;
 
     &:focus{
         border:rem(3px) solid #f9b43b;
@@ -75,6 +97,7 @@
     height:rem(110px);;
     resize: none;  
     overflow: hidden;
+    color:#2f3234;
 
     &:focus{
         border:rem(3px) solid #f9b43b;
@@ -187,7 +210,7 @@
 
     &:after{
         content:"";
-        background-image: url('/img/form/chb_mark.png');
+        background-image: url('../img/form/chb_mark.png');
         position: absolute;
         display: inline-block;
         background-size:cover;
@@ -210,4 +233,29 @@
 .buy__button--form{
     margin-left: 0;
     margin-right:rem(8px);
+}
+
+.texture_form{
+    background-image: url('../img/form/logos.png');
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
+.formmodal__text{
+   
+    padding: rem(20px);
+    background-color: white;
+    border-radius:rem(3px);
+}
+
+.formmodal__msg{
+    font-family: 'Ubuntu', 'Arial';
+    font-weight:300;
+    font-size:rem(14px);
+    color:#2f3234;
+    margin-bottom:rem(20px);
+
 }

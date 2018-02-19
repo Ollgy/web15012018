@@ -36,6 +36,10 @@ body{
     width: 100%;
     height: 100%;
     text-align: center;
+
+    &::-webkit-scrollbar{
+        width:0px;
+    }
    
 
     /* font-size: */
@@ -54,9 +58,19 @@ h1,h2,h3{
 .wrapper {
     position:relative;
     overflow:hidden;
-    min-height:rem(650px);
+    min-height:rem(500px);
+    height:100%;
     min-width: 100%;
 
+}
+
+.content{
+    height: 100%;
+    min-height:rem(500px);
+    position:relative;
+    top:0;
+    transition: 1s;
+    will-change: transform;
 }
 
 
@@ -72,14 +86,39 @@ h1,h2,h3{
     margin: 0 auto ;
     position: relative;
     width:100%;
+    max-width:1100px;
     height:100%;
     padding-left:5%;
     padding-right:5%;
     box-sizing:border-box;
+
+    @include phones{
+        
+        padding-left:2%;
+        padding-right:2%;
+           
+    }
     
 }
 
+.container--best{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    padding-left:6%;
+    padding-right:6%;
+}
+
+.container--slider{
+    padding:0;
+}
+
 .container--team{
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items:center;
     width: 50%;
     height: 100%;
     background-color: rgba(81, 80, 90, 0.9);
@@ -87,31 +126,29 @@ h1,h2,h3{
     top:0;
     left:50%;
     margin:0;
-    padding-top:rem(115px);
-    padding-left: rem(100px);
     text-align:left;
+    padding:0;
     box-sizing: border-box;
 
     @include tablets{
        
        padding-left:0;
        padding-right:0;
+       justify-content: center;
+       align-items:center;
        width:100%;
        left:0;
-       display:flex;
-       flex-direction: column;
-       align-items: center;
+    
     }
       
       @include phones{
         
            padding-left:0;
            padding-right:0;
+           justify-content: center;
+           align-items:center;
            width:100%;
            left:0;
-           display:flex;
-           flex-direction: column;
-           align-items: center;
            
     }
     
@@ -121,29 +158,38 @@ h1,h2,h3{
     position:absolute;
     right:0;
     height:100%;
-    padding-right:0;
+    padding:0;
 }
 
 .container--form{
-    width: 100%;
-    height: 100%;
+    
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    padding:0;
 }
 
 .section{
-    width: 100vw;
-    height: 100vh;
-    min-height:rem(650px);
+    width: 100%;//100vw
+    height: 100%;//100vh
+    //min-height:rem(650px);
     position: relative;
     background-size: cover;
     background-position:center;
     background-repeat: no-repeat;
     text-align:center;
     box-sizing:border-box;
-    // z-index:-1000;
+
+    //т.к. размер от viewport не учитывает меню верхнее и нижнее
+    @include phones{
+        width: 100%;
+        height: 100%;
+     }
 }
 
 .section--start{
-  background-image: url('/img/start/video-bg.jpg');
+  background-image: url('../img/start/video-bg.jpg');
   padding-top: rem(15px);
   padding-bottom: rem(40px);
 }
@@ -151,12 +197,14 @@ h1,h2,h3{
 
 
 .section--best{
-  background-image: url('/img/best/bg.jpg');
-  padding-top:rem(115px);
+  background-image: url('../img/best/bg.jpg');
+ 
+  
 }
 
 .section--slider{
     background-image: linear-gradient(#f9b43b,#eb8d38,#f9b43b);
+    
 
 }
 
@@ -166,35 +214,37 @@ h1,h2,h3{
 }
 
 .section--team{
-    background-image: url('/img/team/background.jpg');
+    background-image: url('../img/team/background.jpg');
 }
 
 .section--menu{
-    background-image: url('/img/menu/background.jpg');
+    background-image: url('../img/menu/background.jpg');
 }
 
 .section--contact{
-    background-image: url('/img/contact/map.jpg');
+    background-image: url('../img/contact/map.jpg');
 }
 
 .section--form{
-    background-image: url('/img/form/background.jpg');
-    padding-top:rem(140px);
-    padding-right:15%;
-    padding-left:15%;
+    background-image: url('../img/form/background.jpg');
+    
+    padding-right:7%;
+    padding-left:7%;
     box-sizing:border-box;
-    width: 100%;
-    height: 100%;
+   
+    @include tablets{
+        padding-right:1%;
+        padding-left:1%;
+     }
+
+     @include phones{
+        padding-right:1%;
+        padding-left:1%;
+     }
 }
 
-// .section--form:after{
-//     background-image: url('/img/form/logos.png');
-//     position:absolute;
-//     top:0;
-//     left:0;
-//     width: 100%;
-//     height: 100%;
-// }
+
+
 
 .title{
     
@@ -220,23 +270,31 @@ h1,h2,h3{
 
     .title--team{
         color: #f9b43b;
-        margin-bottom: rem(55px); 
+        margin-bottom: rem(50px); 
+        text-align: left;
       
-      }
+    }
 
       
 
       .title--menu{
         color: white;  
         float:left;   
-        margin-left: 12%; 
+        margin-left: 9%; 
         margin-top: 8%;
       }
 
       .title--slider{
         color: white; 
-        margin-bottom: 0;
-        line-height:1;
+        margin-bottom: 8%;
+        line-height:0.9;
+        margin-top:10%;
+
+        @include tablets{
+            width:90%; 
+            margin-top:0;
+         }
+    
       }
 
       .title--lmenu{
@@ -247,8 +305,7 @@ h1,h2,h3{
         color: white;   
         font-size: rem(40px);
         writing-mode: vertical-lr;
-        transform:rotate(180deg) translate(50%,0);
-        left:50%;
+        transform:rotate(180deg); 
         margin:0;
         padding:0;  
         
@@ -270,7 +327,6 @@ h1,h2,h3{
       text-transform:lowercase;
       font-stretch: condensed;
       line-height: 0.9em;
-      margin-left: rem(40px);
       letter-spacing: -rem(1.5px);
       font-weight:300;
       text-align:left;
@@ -307,7 +363,7 @@ h1,h2,h3{
         color:white;
         font-size: rem(14px);
         letter-spacing: rem(1px);
-        margin-bottom: rem(30px);
+        margin-bottom: 5%;
 
         @include tablets{
             margin-bottom: 0;
@@ -316,8 +372,16 @@ h1,h2,h3{
          @include phones{
             font-size: rem(20px);
             margin-bottom:rem(30px);
+            width:85%;
          }
 
+    }
+
+    .title--reviewmodal{
+        color:#2f3234;
+        font-size: rem(14px);
+        letter-spacing: rem(1px);
+        margin-bottom: rem(30px);
     }
 
 /* .wrapper:after{

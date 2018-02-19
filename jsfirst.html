@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+        <button id="load">загрузить</button>   
+        <div class="text"></div>
+
+    <script>
+
+        //    var block = document.createElement('div');
+        //    var body = document.querySelector('body');
+
+        //    body.appendChild(block);
+
+        //    block.textContent = "Я попал в дерево";
+
+        //    var block_inner = document.createElement('div');
+        //    block_inner.className = "inner";
+
+        //    block_inner.textContent = "И я попал в дерево, только я внутри";
+        //    block_inner.style.color = "red";
+        //    block.appendChild(block_inner);
+
+        //    block_inner.addEventListener('click', function(){
+        //     console.log('Этот текст говорит о том, что я все сделал правильно!');
+        //    });
+
+        //    var link = document.createElement('a');
+        //    link.textContent = "Ссылка"
+        //    link.href = "https://loftschool.com";
+
+        //    link.addEventListener('click', function(event){
+        //        event.preventDefault();
+        //     console.log('Веду по пути -'+ link.getAttribute('href'));
+        //    })
+
+        //    body.appendChild(link)
+
+
+
+        //task1
+        function filter(input, than) {
+
+            var newinput = [];
+
+            for (var i = 0; i < input.length; i++) {
+                if (input[i] > than) {
+                    // console.log(input[i]);
+                    newinput.push(input[i]);
+
+                }
+            }
+            return newinput;
+            // напишите здесь код, который возвращает новый массив
+            // в котором содержатся те элементы input, которые больше than
+
+        }
+
+        var array = [12, 100, 34, 65, 10];
+        var result = filter(array, 60);
+
+        console.log(result); // [100, 65];
+
+        result = filter(array, 20);
+        console.log(result); // [100, 34, 65];
+
+
+
+        //task2
+        function filter1(input, than) {
+
+
+
+            var newinput = [];
+
+            for (var i = 0; i < input.length; i++) {
+
+
+                if (input[i] > than) {
+                    // console.log(input[i]);
+                    newinput.push(input[i]);
+
+                }
+            }
+            return newinput;
+            // напишите здесь код, который возвращает новый массив
+            // в котором содержатся те элементы input, которые больше than
+
+        }
+
+        // var array = [12, 'abc', 34, 65, 10];
+        // try {
+
+        //     if (array.length == 0) {
+        //         throw new Error('Пустой массив!')
+        //     }
+
+        //     for (var i = 0; i < array.length; i++) {
+        //         if (!isFinite(array[i])) {
+        //             throw new Error('Массив содержит не число!');
+        //         } else if (array[i] < 0) {
+        //             throw new Error('Массив содержит отрицательное число!')
+        //         }
+        //     }
+
+        //     var result = filter1(array, 60);
+        //     console.log(result); // [100, 65];
+
+        // } catch (e) {
+        //     console.log(e.message);
+        // }
+
+
+
+        // result = filter1(array, 20);
+        // console.log(result); // [100, 34, 65];
+        
+        function delay(time){
+            const promise = new Promise(
+
+                function(resolve){
+                    setTimeout(function Func(){
+                        resolve(time);
+                    },time);                  
+                }
+            )
+            return promise;
+       }
+       
+
+       delay(3000).then(function(val){
+           console.log('Прошло '+val/1000+' секунды');
+       });
+
+       delay(3000).then(function(val){
+
+           console.log('Прошло '+val/1000+' cекунды');
+           return delay(5000)
+
+       }).then(function(val){
+
+           console.log('Прошло '+val/1000+' cекунды');
+           return delay(2000)
+
+       }).then(function(val){
+           console.log('Прошло '+val/1000+' cекунды');
+       });
+
+       var btn = document.querySelector('#load');
+       var txt = document.querySelector('.text');
+
+       btn.addEventListener('click',function(){
+           console.log('click');
+           const xhr = new XMLHttpRequest;
+           xhr.open('GET','https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.json');
+           xhr.send();
+           xhr.addEventListener('load',function(){
+
+             let cities = JSON.parse(xhr.responseText);
+             let cityList;
+
+             for(i=0;i<cities.length;i++){
+                cityList+=cities[i].name+'\n';
+             }
+             
+            console.log(cityList);
+            txt.textContent = cityList;
+           })
+       })
+
+      
+       
+
+    </script>
+
+
+
+</body>
+
+</html>

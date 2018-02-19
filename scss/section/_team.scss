@@ -2,12 +2,31 @@
     display:inline-block;
     // width: rem(350px);
     max-height:80%; 
+    width:65%;
+    margin-top:15%;
+
+    @include tablets{        
+        width: 85%;
+        text-align: center;     
+    }
+       
+    @include phones{         
+        width: 90%;
+        text-align: center;            
+    }
 }
 
 .accordeon__list{
    
     margin:0;
     padding:0;
+    width:100%;
+}
+
+.accordeon__link{
+    text-decoration:none;
+    display:inline-block;
+    height:auto;
 }
 
 .accordeon__item{
@@ -15,6 +34,8 @@
     width: 100%;
     margin-top:rem(18px);
     position:relative;
+    
+
 
     &:first__child{
         margin-top: 0;
@@ -24,6 +45,7 @@
 
         .title--team{
         color:#f9b43b;
+
     }
 
     .triangle{
@@ -35,7 +57,9 @@
 }
 
     &--active>.accordeon__content{
-        height:100%;
+      height: 100%;
+       
+            
     }
 
 }
@@ -55,14 +79,6 @@
     
 }
 
-// .triangle--bottom{
-//     border-top: 
-// }
-
-// .triangle--top{
-//     border-bottom: 
-// }
-
 .accordeon__content{
     
     box-sizing: border-box;
@@ -77,16 +93,16 @@
         align-items: center;
      }
       
-      @include phones{
+    @include phones{
         flex-direction: column;
         align-items: center;
-        }
+    }
 
     
 }
 
 .accordeon__foto{
-    background-image: url('/img/team/photo2.jpg');
+    background-image: url('../img/team/photo2.jpg');
     width: rem(105px);
     height: rem(105px);
     border-radius: 50%;
@@ -96,20 +112,29 @@
     display: inline-block;
     margin-right: rem(15px);
     margin-left: rem(15px);
+
+    @include tablets{
+        margin-bottom: rem(25px);
+     }
+      
+      @include phones{
+        margin-bottom: rem(25px);
+    }
    
 }
 
 .accordeon__avatar{
-    width: rem(100px);
-    height: rem(100px);
+    width: rem(105px);
+    height: rem(105px);
     border-radius: 50%;
     overflow: hidden; 
     background-size: cover;
     background-position: center; 
     display: inline-block;
     margin-right: rem(20px);
-    margin-left: rem(20px);
+    margin-left: rem(20px);    
 }
+
 
 .accordeon__avatar--hidden{
     visibility: hidden;
@@ -126,10 +151,12 @@
 
     @include tablets{
         text-align: center;
+        width: 50%;
      }
       
       @include phones{
         text-align: center;
+        width: 90%;
         }
 }
 
